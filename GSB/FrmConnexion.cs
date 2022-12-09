@@ -78,7 +78,7 @@ namespace GSB {
                 txtMdp.Text = "19910826";
                 txtLogin.Text = "a17";
                 // empêcher la propagation de l'événement vers le champ ayant le focus et gérant le même événement
-
+                e.Handled = true;
                 // seConnecter(txtLogin.Text, txtMdp.Text);
             }
         }
@@ -91,6 +91,7 @@ namespace GSB {
         private void parametrerComposant() {
             Text = "Laboratoire pharmaceutique Galaxy-Swiss Bourdin - Gestion des visites";
             ControlBox = false;
+            KeyPreview = true;
             txtLogin.Focus();
         }
 
@@ -142,5 +143,14 @@ namespace GSB {
 
         #endregion
 
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblErreurConnexion_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

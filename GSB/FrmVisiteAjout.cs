@@ -29,6 +29,9 @@ namespace GSB {
 
         }
 
-    
+        private void lblTitre_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

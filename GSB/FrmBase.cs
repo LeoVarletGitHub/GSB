@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace GSB {
     public partial class FrmBase : Form {
-        
+        private int fermeture = 0;
 
 
         public FrmBase() {
@@ -30,11 +30,17 @@ namespace GSB {
         // sur la fermeture du formulaire,
         // Si le visiteur a essayé de fermer la fenêtre par la croix ou encore par alt F4
         // on annule la demande pour obliger le visiteur à se déconnecter pour quitter ce formulaire 
-        
+
+        private void FrmBase_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Alt && e.KeyCode == Keys.F4) e.Handled = true;
+        }
+
         private void déconnexionToolStripMenuItem_Click(object sender, EventArgs e) {
             Globale.nomVisiteur = "";
             Passerelle.seDeConnecter();
             Globale.formulaireConnexion.Show();
+            fermeture = 1;
             Close();
         }
 
@@ -42,6 +48,7 @@ namespace GSB {
         private void programmerRendezVous_Click(object sender, EventArgs e) {
             FrmVisiteAjout unFrmSaisieVisite = new FrmVisiteAjout();
             unFrmSaisieVisite.Show();
+            fermeture = 1;
             Close();
         }
 
@@ -88,6 +95,7 @@ namespace GSB {
         private void listePraticien_Click(object sender, EventArgs e) {
             FrmPraticienListe unFrmPraticien = new FrmPraticienListe();
             unFrmPraticien.Show();
+            fermeture = 1;
             Close();
 
 
@@ -115,11 +123,11 @@ namespace GSB {
 
             Text = "Laboratoire pharmaceutique Galaxy-Swiss Bourdin - Gestion des visites";
             lblVisiteur.Text =  Globale.nomVisiteur;
-            ControlBox = true;
+            ControlBox = false;
             MaximizeBox = true;
             MinimizeBox = true;
             WindowState = FormWindowState.Maximized;
-
+            KeyPreview = true;
             // il faut éventuellement désactiver certaines options du menu selon les données 
             // on ne peut pas déplacer un rendez-vous si le visiteur n'a aucun rendez vous 
             // on ne peut pas cloturer une visite si le visiteur n'a aucune visite à clôturer (tous les bilans sont déja renseignés
@@ -128,8 +136,17 @@ namespace GSB {
 
         }
 
+
+
+
         #endregion
 
-
+        private void FrmBase_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if(fermeture == 0)
+            {
+                e.Cancel = true;
+            }
+        }
     }
 }

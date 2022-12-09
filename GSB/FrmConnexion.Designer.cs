@@ -98,6 +98,7 @@
             this.label1.TabIndex = 10;
             this.label1.Text = "Accès visiteur";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // imgGsb
             // 
@@ -137,6 +138,7 @@
             this.lblErreurConnexion.TabIndex = 18;
             this.lblErreurConnexion.Text = "msg";
             this.lblErreurConnexion.Visible = false;
+            this.lblErreurConnexion.Click += new System.EventHandler(this.lblErreurConnexion_Click);
             // 
             // bulleLogin
             // 
@@ -202,7 +204,6 @@
             this.Controls.Add(this.btnQuitter);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.KeyPreview = true;
             this.Name = "FrmConnexion";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Laboratoire pharmaceutique Galaxy-Swiss Bourdin - Gestion des visites";
