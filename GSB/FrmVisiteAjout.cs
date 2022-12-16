@@ -33,5 +33,25 @@ namespace GSB {
         {
 
         }
+
+        private void praticien_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void date_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void motif_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

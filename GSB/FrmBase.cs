@@ -128,6 +128,7 @@ namespace GSB {
             MinimizeBox = true;
             WindowState = FormWindowState.Maximized;
             KeyPreview = true;
+            ShowInTaskbar = false;
             // il faut éventuellement désactiver certaines options du menu selon les données 
             // on ne peut pas déplacer un rendez-vous si le visiteur n'a aucun rendez vous 
             // on ne peut pas cloturer une visite si le visiteur n'a aucune visite à clôturer (tous les bilans sont déja renseignés

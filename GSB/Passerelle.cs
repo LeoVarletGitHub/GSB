@@ -10,6 +10,7 @@ using System.Data;   // pour ParameterDirection
 using MySql.Data.MySqlClient;
 using System.Collections.Generic;
 using lesClasses;
+using System.Windows.Forms;
 
 namespace GSB
 {
@@ -70,7 +71,13 @@ namespace GSB
         // le chargement des données spécifiques au visiteur connecté doit se faire à chaque fois en vidant les anciennes données 
         static public void chargerDonnees()
         {
-           
+            MySqlCommand cmd = new MySqlCommand("Select * from mesPraticiens;", cnx);
+            MySqlDataReader curseur = cmd.ExecuteReader();
+            while (curseur.Read())
+            {
+                
+            }
+            curseur.Close();
         }
 
 
