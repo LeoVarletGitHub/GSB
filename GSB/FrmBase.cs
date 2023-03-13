@@ -54,41 +54,47 @@ namespace GSB {
 
         // déplacer un rendez vous (changement de date et heure)
         private void modifierRendezVous_Click(object sender, EventArgs e) {
-
-
-           
+            FrmMoveDelVisite unFrmMoveDelVisite = new FrmMoveDelVisite();
+            unFrmMoveDelVisite.Show();
+            fermeture = 1;
+            Close();
         }
 
         // imprimer les rendez-vous sur une période donnée
         private void imprimerRendezvous_Click(object sender, EventArgs e) {
+            FrmImpression unFrmImpression = new FrmImpression();
+            unFrmImpression.Show();
+            fermeture = 1;
+            Close();
 
 
-            
         }
 
         // clôturer une visite en enregistrant le bilan, les médicaments présentés et les échantillons fournis
         private void enregistrerBilan_Click(object sender, EventArgs e) {
+            FrmBilan unFrmBilan = new FrmBilan();
+            unFrmBilan.Show();
+            fermeture = 1;
+            Close();
 
-            
         }
 
         // consulter l'ensemble des visites réalisées
         private void consulterVisite_Click(object sender, EventArgs e) {
-         
+            FrmConsul unFrmConsul = new FrmConsul();
+            unFrmConsul.Show();
+            fermeture = 1;
+            Close();
         }
 
         // consultation des médicaments
         private void ficheMédicamentToolStripMenuItem_Click(object sender, EventArgs e) {
+            FrmMedicament unFrmMedicament = new FrmMedicament();
+            unFrmMedicament.Show();
+            fermeture = 1;
+            Close();
 
 
-
-        }
-
-        // consulter l'ensemble des échantillons distribués par le visiteur connecté
-        private void voirEchantillon_Click(object sender, EventArgs e) {
-
-
-            
         }
 
         // consulter la liste des praticiens gérés par le visiteur
@@ -103,16 +109,20 @@ namespace GSB {
 
         // ajouter un nouveau praticien
         private void nouveauPraticien_Click(object sender, EventArgs e) {
+            FrmPraticienAjout unFrmPraticienAjout = new FrmPraticienAjout();
+            unFrmPraticienAjout.Show();
+            fermeture = 1;
+            Close();
 
-         
 
         }
 
         // Modifier les coordonnées d'un praticien
         private void modifierPraticien_Click(object sender, EventArgs e) {
-
-
-           
+            FrmModifPraticien unFrmModifPraticien = new FrmModifPraticien();
+            unFrmModifPraticien.Show();
+            fermeture = 1;
+            Close();
         }
 
         #endregion

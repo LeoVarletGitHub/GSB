@@ -58,11 +58,35 @@
     <Compile Include="FrmBase.Designer.cs">
       <DependentUpon>FrmBase.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmBilan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBilan.Designer.cs">
+      <DependentUpon>FrmBilan.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmConnexion.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmConnexion.Designer.cs">
       <DependentUpon>FrmConnexion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmConsul.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmConsul.Designer.cs">
+      <DependentUpon>FrmConsul.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmImpression.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmImpression.Designer.cs">
+      <DependentUpon>FrmImpression.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMedicament.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMedicament.Designer.cs">
+      <DependentUpon>FrmMedicament.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmMenu.cs">
       <SubType>Form</SubType>
@@ -70,17 +94,29 @@
     <Compile Include="FrmMenu.Designer.cs">
       <DependentUpon>FrmMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmModifPraticien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmModifPraticien.Designer.cs">
+      <DependentUpon>FrmModifPraticien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMoveDelVisite.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMoveDelVisite.Designer.cs">
+      <DependentUpon>FrmMoveDelVisite.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmPraticienAjout.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPraticienAjout.Designer.cs">
+      <DependentUpon>FrmPraticienAjout.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmPraticienListe.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmPraticienListe.Designer.cs">
       <DependentUpon>FrmPraticienListe.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FrmTest.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmTest.Designer.cs">
-      <DependentUpon>FrmTest.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmVisiteAjout.cs">
       <SubType>Form</SubType>
@@ -95,17 +131,35 @@
     <EmbeddedResource Include="FrmBase.resx">
       <DependentUpon>FrmBase.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmBilan.resx">
+      <DependentUpon>FrmBilan.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmConnexion.resx">
       <DependentUpon>FrmConnexion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmConsul.resx">
+      <DependentUpon>FrmConsul.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmImpression.resx">
+      <DependentUpon>FrmImpression.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMedicament.resx">
+      <DependentUpon>FrmMedicament.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmMenu.resx">
       <DependentUpon>FrmMenu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmModifPraticien.resx">
+      <DependentUpon>FrmModifPraticien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMoveDelVisite.resx">
+      <DependentUpon>FrmMoveDelVisite.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPraticienAjout.resx">
+      <DependentUpon>FrmPraticienAjout.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmPraticienListe.resx">
       <DependentUpon>FrmPraticienListe.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmTest.resx">
-      <DependentUpon>FrmTest.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmVisiteAjout.resx">
       <DependentUpon>FrmVisiteAjout.cs</DependentUpon>

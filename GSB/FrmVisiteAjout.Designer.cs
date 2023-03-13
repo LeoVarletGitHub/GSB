@@ -32,6 +32,7 @@
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -39,12 +40,14 @@
             // lblTitre
             // 
             this.lblTitre.Size = new System.Drawing.Size(936, 64);
+            this.lblTitre.Text = "Enregister un nouveau rendez-vous";
             this.lblTitre.Click += new System.EventHandler(this.lblTitre_Click);
             // 
             // groupBox1
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.AutoSize = true;
+            this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.motif);
             this.groupBox1.Controls.Add(this.praticien);
             this.groupBox1.Controls.Add(this.comboBox2);
@@ -53,7 +56,7 @@
             this.groupBox1.Controls.Add(this.dateTimePicker1);
             this.groupBox1.Location = new System.Drawing.Point(618, 133);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(306, 270);
+            this.groupBox1.Size = new System.Drawing.Size(306, 276);
             this.groupBox1.TabIndex = 13;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Nouveau Rendez-vous";
@@ -123,11 +126,22 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(23, 105);
+            this.label1.Location = new System.Drawing.Point(23, 108);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.Size = new System.Drawing.Size(187, 13);
             this.label1.TabIndex = 15;
-            this.label1.Text = "label1";
+            this.label1.Text = "Liste des rendez-vous déjà enregistrés";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.button1.Location = new System.Drawing.Point(137, 217);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(122, 40);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "Ajouter";
+            this.button1.UseVisualStyleBackColor = false;
             // 
             // FrmVisiteAjout
             // 
@@ -163,5 +177,6 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button1;
     }
 }

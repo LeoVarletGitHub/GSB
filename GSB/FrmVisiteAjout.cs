@@ -25,7 +25,6 @@ namespace GSB {
 
 
         private void parametrerComposant() {
-            this.lblTitre.Text = "Enregistrer un nouveau rendez-vous";
 
         }
 
@@ -50,6 +49,11 @@ namespace GSB {
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
         {
 
         }

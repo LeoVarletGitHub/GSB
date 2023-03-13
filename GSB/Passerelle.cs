@@ -11,6 +11,7 @@ using MySql.Data.MySqlClient;
 using System.Collections.Generic;
 using lesClasses;
 using System.Windows.Forms;
+using System.Linq;
 
 namespace GSB
 {
@@ -71,11 +72,70 @@ namespace GSB
         // le chargement des données spécifiques au visiteur connecté doit se faire à chaque fois en vidant les anciennes données 
         static public void chargerDonnees()
         {
-            MySqlCommand cmd = new MySqlCommand("Select * from mesPraticiens;", cnx);
-            MySqlDataReader curseur = cmd.ExecuteReader();
+            MySqlCommand cmd = new MySqlCommand();
+            MySqlDataReader curseur;
+            if (Globale.lesMedicaments.Count == 0) { 
+                cmd = new MySqlCommand("select * from medicament join famille f on f.id = medicament.idFamille", cnx);
+                curseur = cmd.ExecuteReader();
+                while (curseur.Read())
+                {
+                    Globale.lesMedicaments.Add(new Medicament(curseur.GetString(0), curseur.GetString(1), curseur.GetString(2), curseur.GetString(3), curseur.GetString(4), new Famille(curseur.GetString(5), curseur.GetString(7))));
+                }
+                curseur.Close();
+                cmd = new MySqlCommand("select * from motif", cnx);
+                curseur = cmd.ExecuteReader();
+                while (curseur.Read())
+                {
+                    Globale.lesMotifs.Add(new Motif(curseur.GetInt32(0), curseur.GetString(1)));
+                }
+                curseur.Close();
+
+                cmd = new MySqlCommand("select * from typepraticien", cnx);
+                curseur = cmd.ExecuteReader();
+                while (curseur.Read())
+                {
+                    Globale.lesTypes.Add(new TypePraticien(curseur.GetString(0), curseur.GetString(1)));
+                }
+                curseur.Close();
+
+                cmd = new MySqlCommand("select * from specialite", cnx);
+                curseur = cmd.ExecuteReader();
+                while (curseur.Read())
+                {
+                    Globale.lesSpecialites.Add(new Specialite(curseur.GetString(0), curseur.GetString(1)));
+                }
+                curseur.Close();
+            }
+            cmd = new MySqlCommand("select * from mesvilles", cnx);
+            curseur = cmd.ExecuteReader();
             while (curseur.Read())
             {
-                
+                Globale.mesVilles.Add(new Ville(curseur.GetString(0), curseur.GetString(1)));
+            }
+            curseur.Close();
+            
+            curseur.Close();
+            
+            cmd = new MySqlCommand("select * from mespraticiens", cnx);
+            curseur = cmd.ExecuteReader();
+            while (curseur.Read())
+            {
+                Globale.mesPraticiens.Add(new Praticien(curseur.GetInt32(0),curseur.GetString(1), curseur.GetString(2), curseur.GetString(3), curseur.GetString(4), curseur.GetString(5), curseur.GetString(6), curseur.GetString(7), new TypePraticien(curseur.GetString(8), curseur.GetString(9)), new Specialite(curseur.GetString(10), curseur.GetString(11)) ));
+            }
+            curseur.Close();
+
+            List<Visite> lesVisites = new List<Visite>();
+            cmd = new MySqlCommand("select id, dateEtHeure, bilan, motif, praticien, premierMedicament, secondMedicament from mesvisites", cnx);
+            curseur = cmd.ExecuteReader();
+            while (curseur.Read())
+            {
+                int id = curseur.GetInt32("id");
+                DateTime dateEtHeure = curseur.GetDateTime("dateEtHeure");
+                int idMotif = curseur.GetInt32("motif");
+                int idPraticien = curseur.GetInt32("praticien");
+                Praticien praticien = Globale.mesPraticiens.First(x => x.Id.Equals(idPraticien));
+                Motif motif = Globale.lesMotifs.First(x => x.Id.Equals(idMotif));
+                Globale.mesVisites.Add(new Visite(id, praticien, motif, dateEtHeure));
             }
             curseur.Close();
         }
@@ -92,6 +152,25 @@ namespace GSB
         /// <returns>identifiant de la nouvelle visite ou 0 si erreur lors de la création</returns>
         static public int ajouterRendezVous(int idPraticien, int idMotif, DateTime uneDate, out string message)
         {
+            /* MySqlCommand cmd = new MySqlCommand();
+            cmd.CommandText = "ajouterRendezVous";
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Connection = cnx;
+            cmd.Parameters.AddWithValue("_idPraticien", idPraticien);
+            cmd.Parameters.AddWithValue("_idMotif", idMotif);
+            cmd.Parameters.AddWithValue("_dateEtHeure", uneDate);
+            cmd.ExecuteNonQuery();
+            MySqlDataReader curseur = cmd.ExecuteReader();
+            if (curseur.Read())
+            {
+                message = curseur.GetString(0);
+                return message;
+            }
+            else
+            {
+                message = string.Empty;
+                return 0;
+            }   */
             message = string.Empty;
             return 0;
         }
