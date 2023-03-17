@@ -1,6 +1,6 @@
 ﻿namespace GSB
 {
-    partial class FrmTest
+    partial class FrmPraticienAjout
     {
         /// <summary>
         /// Required designer variable.
@@ -30,21 +30,15 @@
         {
             this.SuspendLayout();
             // 
-            // lblTitre
-            // 
-            this.lblTitre.Size = new System.Drawing.Size(800, 64);
-            // 
-            // FrmTest
+            // FrmPraticienAjout
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Name = "FrmTest";
-            this.Text = "FrmTest";
-            this.Load += new System.EventHandler(this.FrmTest_Load);
-            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FrmTest_KeyDown);
+            this.Name = "FrmPraticienAjout";
+            this.Text = "FrmPraticienAjout";
+            this.Load += new System.EventHandler(this.FrmPraticienAjout_Load);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 

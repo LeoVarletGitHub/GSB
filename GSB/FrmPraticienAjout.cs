@@ -10,19 +10,14 @@ using System.Windows.Forms;
 
 namespace GSB
 {
-    public partial class FrmTest : FrmBase
+    public partial class FrmPraticienAjout : FrmBase
     {
-        public FrmTest()
+        public FrmPraticienAjout()
         {
             InitializeComponent();
         }
 
-        private void FrmTest_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void FrmTest_KeyDown(object sender, KeyEventArgs e)
+        private void FrmPraticienAjout_Load(object sender, EventArgs e)
         {
 
         }
