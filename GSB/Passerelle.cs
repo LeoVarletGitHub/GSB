@@ -152,6 +152,25 @@ namespace GSB
         /// <returns>identifiant de la nouvelle visite ou 0 si erreur lors de la création</returns>
         static public int ajouterRendezVous(int idPraticien, int idMotif, DateTime uneDate, out string message)
         {
+            /* MySqlCommand cmd = new MySqlCommand();
+            cmd.CommandText = "ajouterRendezVous";
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Connection = cnx;
+            cmd.Parameters.AddWithValue("_idPraticien", idPraticien);
+            cmd.Parameters.AddWithValue("_idMotif", idMotif);
+            cmd.Parameters.AddWithValue("_dateEtHeure", uneDate);
+            cmd.ExecuteNonQuery();
+            MySqlDataReader curseur = cmd.ExecuteReader();
+            if (curseur.Read())
+            {
+                message = curseur.GetString(0);
+                return message;
+            }
+            else
+            {
+                message = string.Empty;
+                return 0;
+            }   */
             message = string.Empty;
             MySqlCommand cmd = new MySqlCommand();
             cmd.CommandText = "ajouterRendezVous";
