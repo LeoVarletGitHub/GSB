@@ -63,5 +63,6 @@ namespace lesClasses {
         // ajoute une visite concernant le praticien
         public void ajouteVisite(Visite v) => lesVisites.Add(v);
 
+        public override string ToString() => NomPrenom;
     }
 }

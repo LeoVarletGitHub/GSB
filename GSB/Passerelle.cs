@@ -12,6 +12,7 @@ using System.Collections.Generic;
 using lesClasses;
 using System.Windows.Forms;
 using System.Linq;
+using System.Data.Common;
 
 namespace GSB
 {
@@ -124,7 +125,6 @@ namespace GSB
             }
             curseur.Close();
 
-            List<Visite> lesVisites = new List<Visite>();
             cmd = new MySqlCommand("select id, dateEtHeure, bilan, motif, praticien, premierMedicament, secondMedicament from mesvisites", cnx);
             curseur = cmd.ExecuteReader();
             while (curseur.Read())
@@ -135,7 +135,28 @@ namespace GSB
                 int idPraticien = curseur.GetInt32("praticien");
                 Praticien praticien = Globale.mesPraticiens.First(x => x.Id.Equals(idPraticien));
                 Motif motif = Globale.lesMotifs.First(x => x.Id.Equals(idMotif));
-                Globale.mesVisites.Add(new Visite(id, praticien, motif, dateEtHeure));
+                var visite = new Visite(id, praticien, motif, dateEtHeure);
+                string Smedicament = "";
+                Medicament secondMedicament;
+                if (!curseur.IsDBNull(2))
+                {
+                    string bilan = curseur.GetString("bilan");
+                    string Pmedicament = curseur.GetString("premierMedicament");
+                    Medicament premierMedicament = Globale.lesMedicaments.First(x => x.Nom.Equals(Pmedicament));
+                    if (!curseur.IsDBNull(6))
+                    {
+                        Smedicament = curseur.GetString("secondMedicament");
+                        secondMedicament = Globale.lesMedicaments.First(x => x.Nom.Equals(Smedicament));
+                        visite.enregistrerBilan(bilan, premierMedicament, secondMedicament);
+                    }
+                    else
+                    {
+                        visite.enregistrerBilan(bilan, premierMedicament, null);
+                    }
+                }
+                Globale.mesVisites.Add(visite);
+                
+
             }
             curseur.Close();
         }

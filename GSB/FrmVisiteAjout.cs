@@ -17,8 +17,9 @@ namespace GSB {
         }
 
         private void FrmVisiteAjout_Load(object sender, EventArgs e) {
+            dateTimePicker1.CustomFormat = "dddd dd MMMM yyyy HH:mm tt";
+            dateTimePicker1.MinDate = DateTime.Now;
             parametrerComposant();
-      
         }
 
         private void parametrerDgv(DataGridView dgv)
@@ -156,7 +157,7 @@ namespace GSB {
 
             dgv.Columns[2].Name = "Sur";
             dgv.Columns[2].Width = 80;
-            dgv.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dgv.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
             dgv.Columns[3].Name = "Chez";
             dgv.Columns[3].Width = 150;
@@ -183,6 +184,11 @@ namespace GSB {
 
 
         private void parametrerComposant() {
+            dataGridView1.Rows.Clear();
+
+            PraticienBox.Items.Clear();
+            MotifBox.Items.Clear();
+
             parametrerDgv(dataGridView1);
             foreach (Visite visite in Globale.mesVisites)
             {
@@ -198,16 +204,43 @@ namespace GSB {
             }
         }
 
-
-        private void groupBox1_Enter(object sender, EventArgs e)
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
 
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void PraticienBox_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+        private Praticien praticienId;
+        private Motif motifId;
+        private string message;
+        private void button1_Click(object sender, EventArgs e)
+        {
+           
+            praticienId = (Praticien)PraticienBox.SelectedItem;
+            motifId = (Motif)MotifBox.SelectedItem;
+            PraticienBox.Items.Clear();
+            MotifBox.Items.Clear();
+            if (praticienId is null)
+            {
+                messagelabel.Text = "Veuillez choisir un Praticien";
+                messagelabel.Visible = true;
+                return;
+            }
+            if (motifId is null)
+            {
+                messagelabel.Text = "Veuillez choisir un motif";
+                messagelabel.Visible = true;
+                return;
+            }
+            Passerelle.ajouterRendezVous(praticienId.Id, motifId.Id, dateTimePicker1.Value.Date + dateTimePicker1.Value.TimeOfDay, out message);
+            Passerelle.chargerDonnees();
+            parametrerComposant();
+            messagelabel.Text = message;
+            messagelabel.Visible = true;
+            
         }
     }
 }

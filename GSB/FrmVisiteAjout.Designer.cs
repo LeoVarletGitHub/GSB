@@ -33,7 +33,7 @@
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.messagelabel = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -42,7 +42,6 @@
             // 
             this.lblTitre.Size = new System.Drawing.Size(936, 64);
             this.lblTitre.Text = "Enregister un nouveau rendez-vous";
-
             // 
             // groupBox1
             // 
@@ -55,13 +54,12 @@
             this.groupBox1.Controls.Add(this.MotifBox);
             this.groupBox1.Controls.Add(this.date);
             this.groupBox1.Controls.Add(this.dateTimePicker1);
-            this.groupBox1.Location = new System.Drawing.Point(618, 133);
+            this.groupBox1.Location = new System.Drawing.Point(591, 133);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(306, 276);
+            this.groupBox1.Size = new System.Drawing.Size(333, 276);
             this.groupBox1.TabIndex = 13;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Nouveau Rendez-vous";
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // button1
             // 
@@ -72,11 +70,12 @@
             this.button1.TabIndex = 6;
             this.button1.Text = "Ajouter";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // motif
             // 
             this.motif.AutoSize = true;
-            this.motif.Location = new System.Drawing.Point(68, 113);
+            this.motif.Location = new System.Drawing.Point(25, 116);
             this.motif.Name = "motif";
             this.motif.Size = new System.Drawing.Size(30, 13);
             this.motif.TabIndex = 5;
@@ -85,7 +84,7 @@
             // praticien
             // 
             this.praticien.AutoSize = true;
-            this.praticien.Location = new System.Drawing.Point(55, 53);
+            this.praticien.Location = new System.Drawing.Point(25, 58);
             this.praticien.Name = "praticien";
             this.praticien.Size = new System.Drawing.Size(48, 13);
             this.praticien.TabIndex = 4;
@@ -94,24 +93,25 @@
             // PraticienBox
             // 
             this.PraticienBox.FormattingEnabled = true;
-            this.PraticienBox.Location = new System.Drawing.Point(109, 50);
+            this.PraticienBox.Location = new System.Drawing.Point(84, 50);
             this.PraticienBox.Name = "PraticienBox";
-            this.PraticienBox.Size = new System.Drawing.Size(191, 21);
+            this.PraticienBox.Size = new System.Drawing.Size(216, 21);
             this.PraticienBox.TabIndex = 3;
+            this.PraticienBox.SelectedIndexChanged += new System.EventHandler(this.PraticienBox_SelectedIndexChanged);
             // 
             // MotifBox
             // 
             this.MotifBox.FormattingEnabled = true;
-            this.MotifBox.Location = new System.Drawing.Point(109, 113);
+            this.MotifBox.Location = new System.Drawing.Point(84, 113);
             this.MotifBox.Name = "MotifBox";
-            this.MotifBox.Size = new System.Drawing.Size(191, 21);
+            this.MotifBox.Size = new System.Drawing.Size(216, 21);
             this.MotifBox.TabIndex = 2;
             this.MotifBox.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // date
             // 
             this.date.AutoSize = true;
-            this.date.Location = new System.Drawing.Point(31, 174);
+            this.date.Location = new System.Drawing.Point(6, 180);
             this.date.Name = "date";
             this.date.Size = new System.Drawing.Size(72, 13);
             this.date.TabIndex = 1;
@@ -119,9 +119,10 @@
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(109, 174);
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePicker1.Location = new System.Drawing.Point(84, 174);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(191, 20);
+            this.dateTimePicker1.Size = new System.Drawing.Size(239, 20);
             this.dateTimePicker1.TabIndex = 0;
             // 
             // dataGridView1
@@ -140,13 +141,24 @@
             this.label1.Size = new System.Drawing.Size(187, 13);
             this.label1.TabIndex = 15;
             this.label1.Text = "Liste des rendez-vous déjà enregistrés";
-
+            // 
+            // messagelabel
+            // 
+            this.messagelabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.messagelabel.AutoSize = true;
+            this.messagelabel.Location = new System.Drawing.Point(661, 433);
+            this.messagelabel.Name = "messagelabel";
+            this.messagelabel.Size = new System.Drawing.Size(35, 13);
+            this.messagelabel.TabIndex = 16;
+            this.messagelabel.Text = "label2";
+            this.messagelabel.Visible = false;
             // 
             // FrmVisiteAjout
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(936, 534);
+            this.Controls.Add(this.messagelabel);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.groupBox1);
@@ -157,6 +169,7 @@
             this.Controls.SetChildIndex(this.groupBox1, 0);
             this.Controls.SetChildIndex(this.dataGridView1, 0);
             this.Controls.SetChildIndex(this.label1, 0);
+            this.Controls.SetChildIndex(this.messagelabel, 0);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -177,5 +190,6 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label messagelabel;
     }
 }

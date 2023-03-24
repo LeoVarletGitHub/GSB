@@ -1,4 +1,4 @@
-﻿// ------------------------------------------
+﻿ // ------------------------------------------
 // Nom du fichier : medicament.cs
 // Objet : classe Medicament
 // Auteur : M. Verghote
@@ -39,7 +39,7 @@ namespace lesClasses
 
         }
 
-        public override string ToString() => Id;
+        public override string ToString() => Nom;
 
     }
 }
