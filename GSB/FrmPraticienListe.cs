@@ -146,23 +146,23 @@ namespace GSB {
 
             dgv.Columns[0].Name = "Nom et prénom";
 
-            dgv.Columns[0].Width = 175;
+            dgv.Columns[0].Width = 70;
             dgv.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
             dgv.Columns[1].Name = "Téléphone";
-            dgv.Columns[1].Width = 100;
+            dgv.Columns[1].Width = 60;
 
             dgv.Columns[2].Name = "Email";
-            dgv.Columns[2].Width = 80;
-            dgv.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgv.Columns[2].Width = 75;
+            
 
             dgv.Columns[3].Name = "Adresse";
-            dgv.Columns[3].Width = 140;
-            dgv.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgv.Columns[3].Width = 70;
+
 
             dgv.Columns[4].Name = "Date dernière visite";
-            dgv.Columns[4].Width = 140;
-            dgv.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgv.Columns[4].Width = 200;
+
 
             // faut-il désactiver le tri sur toutes les colonnes ? (commenter les lignes si non)
             for (int i = 0; i < dgv.ColumnCount; i++)
@@ -170,12 +170,30 @@ namespace GSB {
 
             #endregion
         }
-
+        private string derniereVisite;
         private void parametrerComposant()
         {
             dataGridView1.Rows.Clear();
             parametrerDgv(dataGridView1);
 
+            foreach (Praticien praticien in Globale.mesPraticiens)
+            {
+                foreach (Visite visite in Globale.mesVisites)
+                {
+                    if(praticien == visite.LePraticien)
+                    {
+                        derniereVisite = visite.DateEtHeure.ToLongDateString();
+                        break;
+                    }
+                }
+                if (derniereVisite.Length <= 0)
+                {
+                    derniereVisite = "Aucune Visite";
+                }
+
+                dataGridView1.Rows.Add(praticien.NomPrenom, praticien.Email, praticien.Telephone, praticien.Rue, derniereVisite);
+                derniereVisite = "";
+            }
         }
     }
 }
