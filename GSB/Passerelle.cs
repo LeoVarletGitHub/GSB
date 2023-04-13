@@ -114,14 +114,12 @@ namespace GSB
                 Globale.mesVilles.Add(new Ville(curseur.GetString(0), curseur.GetString(1)));
             }
             curseur.Close();
-            
-            curseur.Close();
-            
+                    
             cmd = new MySqlCommand("select * from mespraticiens", cnx);
             curseur = cmd.ExecuteReader();
             while (curseur.Read())
             {
-                Globale.mesPraticiens.Add(new Praticien(curseur.GetInt32(0),curseur.GetString(1), curseur.GetString(2), curseur.GetString(3), curseur.GetString(4), curseur.GetString(5), curseur.GetString(6), curseur.GetString(7), new TypePraticien(curseur.GetString(8), curseur.GetString(9)), new Specialite(curseur.GetString(10), curseur.GetString(11)) ));
+                Globale.mesPraticiens.Add(new Praticien(curseur.GetInt32(0),curseur.GetString(1), curseur.GetString(2), curseur.GetString(3), curseur.GetString(4), curseur.GetString(5), curseur.GetString(7), curseur.GetString(6), new TypePraticien(curseur.GetString(8), curseur.GetString(9)), new Specialite(curseur.GetString(10), curseur.GetString(11)) ));
             }
             curseur.Close();
 
@@ -265,7 +263,7 @@ namespace GSB
         {
             message = string.Empty;
             MySqlCommand cmd = new MySqlCommand();
-            cmd.CommandText = "ajouterRendezVous";
+            cmd.CommandText = "ajouterPraticien";
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Connection = cnx;
             cmd.Parameters.AddWithValue("_nom", nom);

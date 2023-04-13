@@ -133,7 +133,7 @@ namespace GSB {
 
             Text = "Laboratoire pharmaceutique Galaxy-Swiss Bourdin - Gestion des visites";
             lblVisiteur.Text =  Globale.nomVisiteur;
-            ControlBox = false;
+            ControlBox = true;
             MaximizeBox = true;
             MinimizeBox = true;
             WindowState = FormWindowState.Maximized;

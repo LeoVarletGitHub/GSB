@@ -154,7 +154,7 @@
             this.Controls.Add(this.messagelabel);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.panel2);
-            this.MinimumSize = new System.Drawing.Size(878, 533);
+            this.MinimumSize = new System.Drawing.Size(1135, 582);
             this.Name = "FrmMoveDelVisite";
             this.Text = "FrmMoveDel";
             this.Load += new System.EventHandler(this.FrmMoveDel_Load);

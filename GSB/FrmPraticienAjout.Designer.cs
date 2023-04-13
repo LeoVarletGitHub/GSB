@@ -45,10 +45,13 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.buttonAjouter = new System.Windows.Forms.Button();
+            this.labelMessage = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblTitre
             // 
+            this.lblTitre.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblTitre.Dock = System.Windows.Forms.DockStyle.None;
             this.lblTitre.Size = new System.Drawing.Size(800, 64);
             this.lblTitre.Text = "Ajout d\'un praticien";
             // 
@@ -61,6 +64,7 @@
             // 
             // textBoxPrenom
             // 
+            this.textBoxPrenom.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxPrenom.Location = new System.Drawing.Point(476, 120);
             this.textBoxPrenom.Name = "textBoxPrenom";
             this.textBoxPrenom.Size = new System.Drawing.Size(234, 20);
@@ -68,6 +72,9 @@
             // 
             // textBoxRue
             // 
+            this.textBoxRue.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxRue.Location = new System.Drawing.Point(51, 184);
             this.textBoxRue.Name = "textBoxRue";
             this.textBoxRue.Size = new System.Drawing.Size(519, 20);
@@ -75,6 +82,11 @@
             // 
             // textBoxVille
             // 
+            this.textBoxVille.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxVille.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.textBoxVille.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.textBoxVille.Location = new System.Drawing.Point(169, 233);
             this.textBoxVille.Name = "textBoxVille";
             this.textBoxVille.Size = new System.Drawing.Size(401, 20);
@@ -82,6 +94,7 @@
             // 
             // textBoxTelephone
             // 
+            this.textBoxTelephone.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.textBoxTelephone.Location = new System.Drawing.Point(51, 298);
             this.textBoxTelephone.Name = "textBoxTelephone";
             this.textBoxTelephone.Size = new System.Drawing.Size(204, 20);
@@ -89,6 +102,7 @@
             // 
             // textBoxEmail
             // 
+            this.textBoxEmail.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxEmail.Location = new System.Drawing.Point(476, 298);
             this.textBoxEmail.Name = "textBoxEmail";
             this.textBoxEmail.Size = new System.Drawing.Size(234, 20);
@@ -105,6 +119,7 @@
             // 
             // label2
             // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(473, 93);
             this.label2.Name = "label2";
@@ -114,6 +129,9 @@
             // 
             // label3
             // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(48, 168);
             this.label3.Name = "label3";
@@ -132,6 +150,7 @@
             // 
             // label5
             // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(473, 282);
             this.label5.Name = "label5";
@@ -141,6 +160,7 @@
             // 
             // label6
             // 
+            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(48, 282);
             this.label6.Name = "label6";
@@ -150,6 +170,7 @@
             // 
             // comboBoxType
             // 
+            this.comboBoxType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.comboBoxType.FormattingEnabled = true;
             this.comboBoxType.Location = new System.Drawing.Point(51, 361);
             this.comboBoxType.Name = "comboBoxType";
@@ -158,6 +179,7 @@
             // 
             // comboBoxSpecialite
             // 
+            this.comboBoxSpecialite.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.comboBoxSpecialite.FormattingEnabled = true;
             this.comboBoxSpecialite.Location = new System.Drawing.Point(476, 361);
             this.comboBoxSpecialite.Name = "comboBoxSpecialite";
@@ -166,6 +188,7 @@
             // 
             // label7
             // 
+            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(48, 345);
             this.label7.Name = "label7";
@@ -175,6 +198,7 @@
             // 
             // label8
             // 
+            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(473, 345);
             this.label8.Name = "label8";
@@ -184,6 +208,7 @@
             // 
             // buttonAjouter
             // 
+            this.buttonAjouter.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.buttonAjouter.BackColor = System.Drawing.Color.Red;
             this.buttonAjouter.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonAjouter.Location = new System.Drawing.Point(291, 409);
@@ -192,12 +217,25 @@
             this.buttonAjouter.TabIndex = 31;
             this.buttonAjouter.Text = "Ajouter";
             this.buttonAjouter.UseVisualStyleBackColor = false;
+            this.buttonAjouter.Click += new System.EventHandler(this.buttonAjouter_Click);
+            // 
+            // labelMessage
+            // 
+            this.labelMessage.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.labelMessage.AutoSize = true;
+            this.labelMessage.Location = new System.Drawing.Point(473, 417);
+            this.labelMessage.Name = "labelMessage";
+            this.labelMessage.Size = new System.Drawing.Size(35, 13);
+            this.labelMessage.TabIndex = 32;
+            this.labelMessage.Text = "label9";
+            this.labelMessage.Visible = false;
             // 
             // FrmPraticienAjout
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 495);
+            this.Controls.Add(this.labelMessage);
             this.Controls.Add(this.buttonAjouter);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
@@ -236,6 +274,7 @@
             this.Controls.SetChildIndex(this.label7, 0);
             this.Controls.SetChildIndex(this.label8, 0);
             this.Controls.SetChildIndex(this.buttonAjouter, 0);
+            this.Controls.SetChildIndex(this.labelMessage, 0);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -260,5 +299,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button buttonAjouter;
+        private System.Windows.Forms.Label labelMessage;
     }
 }

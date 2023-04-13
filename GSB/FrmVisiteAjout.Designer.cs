@@ -40,7 +40,7 @@
             // 
             // lblTitre
             // 
-            this.lblTitre.Size = new System.Drawing.Size(936, 64);
+            this.lblTitre.Size = new System.Drawing.Size(953, 64);
             this.lblTitre.Text = "Enregister un nouveau rendez-vous";
             // 
             // groupBox1
@@ -54,7 +54,7 @@
             this.groupBox1.Controls.Add(this.MotifBox);
             this.groupBox1.Controls.Add(this.date);
             this.groupBox1.Controls.Add(this.dateTimePicker1);
-            this.groupBox1.Location = new System.Drawing.Point(591, 133);
+            this.groupBox1.Location = new System.Drawing.Point(608, 133);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(333, 276);
             this.groupBox1.TabIndex = 13;
@@ -146,7 +146,7 @@
             // 
             this.messagelabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.messagelabel.AutoSize = true;
-            this.messagelabel.Location = new System.Drawing.Point(661, 433);
+            this.messagelabel.Location = new System.Drawing.Point(678, 433);
             this.messagelabel.Name = "messagelabel";
             this.messagelabel.Size = new System.Drawing.Size(35, 13);
             this.messagelabel.TabIndex = 16;
@@ -157,11 +157,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(936, 534);
+            this.ClientSize = new System.Drawing.Size(953, 534);
             this.Controls.Add(this.messagelabel);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.groupBox1);
+            this.MinimumSize = new System.Drawing.Size(969, 573);
             this.Name = "FrmVisiteAjout";
             this.Text = "FrmVisiteAjout";
             this.Load += new System.EventHandler(this.FrmVisiteAjout_Load);

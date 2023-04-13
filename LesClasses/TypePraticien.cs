@@ -16,6 +16,6 @@ namespace lesClasses
         // Constructeur
         public TypePraticien(string id, string libelle)
          => (Id, Libelle) = (id, libelle);
-        
+        public override string ToString() => Libelle;
     }
 }

@@ -159,6 +159,7 @@
             this.labelPraticien.Size = new System.Drawing.Size(48, 13);
             this.labelPraticien.TabIndex = 22;
             this.labelPraticien.Text = "label10";
+            this.labelPraticien.Visible = false;
             // 
             // label11
             // 

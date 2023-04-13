@@ -191,7 +191,7 @@ namespace GSB {
                     derniereVisite = "Aucune Visite";
                 }
 
-                dataGridView1.Rows.Add(praticien.NomPrenom, praticien.Email, praticien.Telephone, praticien.Rue, derniereVisite);
+                dataGridView1.Rows.Add(praticien.NomPrenom, praticien.Telephone,  praticien.Email, praticien.Rue, derniereVisite);
                 derniereVisite = "";
             }
         }
