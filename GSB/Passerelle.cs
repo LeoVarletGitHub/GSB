@@ -153,8 +153,16 @@ namespace GSB
                     }
                 }
                 Globale.mesVisites.Add(visite);
-                
+            }
+            curseur.Close();
 
+            cmd = new MySqlCommand("select * from mesechantillons", cnx);
+            curseur = cmd.ExecuteReader();
+            while (curseur.Read())
+            {
+                Visite visite = Globale.mesVisites.First(x => x.DateEtHeure.Equals(curseur.GetDateTime("dateHeureVisite")));
+                Medicament medicament = Globale.lesMedicaments.First(x => x.Nom.Equals(curseur.GetString("medicament")));
+                visite.ajouterEchantillon(medicament, curseur.GetInt32("quantité"));
             }
             curseur.Close();
         }

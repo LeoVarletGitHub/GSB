@@ -29,7 +29,7 @@
             // 
             // lblTitre
             // 
-            this.lblTitre.Size = new System.Drawing.Size(828, 64);
+            this.lblTitre.Size = new System.Drawing.Size(945, 64);
             this.lblTitre.Text = "Liste des praticiens";
             // 
             // dataGridView1
@@ -38,16 +38,16 @@
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(0, 93);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(828, 378);
+            this.dataGridView1.Size = new System.Drawing.Size(945, 378);
             this.dataGridView1.TabIndex = 13;
             // 
             // FrmPraticienListe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(828, 508);
+            this.ClientSize = new System.Drawing.Size(945, 508);
             this.Controls.Add(this.dataGridView1);
-            this.MinimumSize = new System.Drawing.Size(844, 547);
+            this.MinimumSize = new System.Drawing.Size(961, 547);
             this.Name = "FrmPraticienListe";
             this.Text = "FrmPraticienListe";
             this.Load += new System.EventHandler(this.FrmPraticienListe_Load);

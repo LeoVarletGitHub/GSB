@@ -135,7 +135,7 @@ namespace GSB
             hauteur = 35;
             foreach (Visite visite in Globale.mesVisites)
             {
-                if(dateTimePicker1.Value.Date <= visite.DateEtHeure && visite.DateEtHeure <= dateTimePicker2.Value.Date)
+                if(dateTimePicker1.Value.Date <= visite.DateEtHeure.Date && visite.DateEtHeure.Date <= dateTimePicker2.Value.Date)
                 {
                     largeur = 175;
                     unRectangle = new Rectangle(unPoint.X, unPoint.Y, largeur, hauteur);
@@ -148,26 +148,26 @@ namespace GSB
                     unRectangle = new Rectangle(unPoint.X, unPoint.Y, largeur, hauteur);
                     e.Graphics.DrawString(visite.DateEtHeure.ToString("HH:mm"), unePolice, uneCouleur, unRectangle, unFormat);
 
-                    unFormat.LineAlignment = StringAlignment.Near;
+                    
                     unPoint.X += largeur;
                     largeur = 125;
                     unRectangle = new Rectangle(unPoint.X, unPoint.Y, largeur, hauteur);
                     e.Graphics.DrawString(visite.LePraticien.NomPrenom, unePolice, uneCouleur, unRectangle, unFormat);
 
-                    unFormat.LineAlignment = StringAlignment.Far;
+                    
                     unPoint.X += largeur;
                     largeur = 125;
                     unRectangle = new Rectangle(unPoint.X, unPoint.Y, largeur, hauteur);
                     e.Graphics.DrawString(visite.LePraticien.Telephone, unePolice, uneCouleur, unRectangle, unFormat);
 
 
-                    unFormat.LineAlignment = StringAlignment.Far;
+                    
                     unPoint.X += largeur;
                     largeur = 160;
                     unRectangle = new Rectangle(unPoint.X, unPoint.Y, largeur, hauteur);
                     e.Graphics.DrawString(visite.LePraticien.Ville + " " + visite.LePraticien.Rue, unePolice, uneCouleur, unRectangle, unFormat);
 
-                    unFormat.LineAlignment = StringAlignment.Far;
+                    
                     unPoint.X += largeur;
                     largeur = 150;
                     unRectangle = new Rectangle(unPoint.X, unPoint.Y, largeur, hauteur);
